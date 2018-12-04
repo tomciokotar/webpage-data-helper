@@ -58,7 +58,7 @@ Info na temat obrazka (`id`, `url`, `status`):
 GET /v1/webpage-snaps/<snap_id>/images/<image_id>/info
 ```
 
-Możliwe statusy dla stron i obrazków: `fetching`, `fetched`, `fetching failed`, `not fetched` (jeśli było polecenie, żeby nie ściągać obrazków, tylko sam kod strony).
+Możliwe statusy dla stron i obrazków: `fetching`, `fetched`, `fetching failed`, `not fetched` (status obrazków w przypadku polecenia, żeby ich nie ściągać, tylko sam kod strony).
 
 # Inne
 Jedno niedociągnięcie, co do którego uznałem, że nie trzeba go koniecznie poprawiać na potrzeby zadania (jako że głównym kryterium oceny jest API z tego, co zrozumiałem), ale może warto o nim wspomnieć: nie wszystkie operacje są atomowe.
