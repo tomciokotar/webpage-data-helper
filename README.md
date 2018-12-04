@@ -18,29 +18,45 @@ http://localhost:5000/
 
 # API
 Zapisz nową stronę (`fetch_images` opcjonalnie), w odpowiedzi `snap_id` dla nowej strony:
-`POST /v1/webpage-snaps`
-`{'url': <url>, 'fetch_images': 'true'}`
+```
+POST /v1/webpage-snaps
+{'url': <url>, 'fetch_images': 'true'}
+```
 
 Informacje o stronie (`url`, `status`, ew. `error`):
-`GET /v1/webpage-snaps/<snap_id>/info`
+```
+GET /v1/webpage-snaps/<snap_id>/info
+```
 
 Tekst (w postaci listy tekstów z różnych elementów HTML'owych):
-`GET /v1/webpage-snaps/<snap_id>/text`
+```
+GET /v1/webpage-snaps/<snap_id>/text
+```
 
 Lista opisów obrazków na stronie (`id`, `url`, `status`):
-`GET /v1/webpage-snaps/<snap_id>/images`
+```
+GET /v1/webpage-snaps/<snap_id>/images
+```
 
 `info`, `test` i `images` w jednym:
-`GET /v1/webpage-snaps/<snap_id>`
+```
+GET /v1/webpage-snaps/<snap_id>
+```
 
 Usuwanie strony z bazy (i obrazków, jeśli są), nie zwraca zawartości:
-`DELETE /v1/webpage-snaps/<snap_id>`
+```
+DELETE /v1/webpage-snaps/<snap_id>
+```
 
 Pobieranie konkretnego obrazka (o ile jest zapisany):
-`GET /v1/webpage-snaps/<snap_id>/images/<image_id>`
+```
+GET /v1/webpage-snaps/<snap_id>/images/<image_id>
+```
 
 Info na temat obrazka (`id`, `url`, `status`):
-`GET /v1/webpage-snaps/<snap_id>/images/<image_id>/info`
+```
+GET /v1/webpage-snaps/<snap_id>/images/<image_id>/info
+```
 
 Możliwe statusy dla stron i obrazków: `fetching`, `fetched`, `fetching failed`, `not fetched` (jeśli było polecenie, żeby nie ściągać obrazków, tylko sam kod strony).
 
