@@ -27,6 +27,7 @@ Wszystkie wysyłane i odbierane dane są w JSON'ie.
 Możliwe statusy dla stron i obrazków: `fetching`, `fetched`, `fetching failed`, `not fetched` (ten ostatni to status, jaki mają obrazki w przypadku polecenia, żeby ich nie ściągać, a ściągnąć wyłącznie tekst ze strony).
 
 Zapisz nową stronę w systemie i w odpowiedzi zwróć `snap_id` dla nowej strony (`fetch_images` jest opcjonalne):
+
 Zapytanie:
 ```
 POST /v1/webpage-snaps
