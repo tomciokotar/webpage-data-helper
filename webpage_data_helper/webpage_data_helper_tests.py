@@ -1,7 +1,7 @@
+import app
 import json
 import unittest
 from unittest.mock import patch
-import app
 from webpage_snaps_manager import WebpageSnapsManager
 
 
@@ -123,6 +123,13 @@ class TestWebpageSnaps(unittest.TestCase):
         url = 'http://wp/wp_pliki/a_023.jpeg'
         assert b'OK' in self.app.get('/v1/webpage-snaps/' + wp_id + '/images/' + image_id).data
         assert url in json.loads(self.app.get('/v1/webpage-snaps/' + wp_id + '/images/' + image_id + '/info').data).get('url')
+
+        self.app.delete('/v1/webpage-snaps/' + wp_id)
+        self.app.delete('/v1/webpage-snaps/' + onet_id)
+        self.app.delete('/v1/webpage-snaps/' + google_id)
+        assert b'URL was not found' in self.app.get('/v1/webpage-snaps/' + wp_id).data
+        assert b'URL was not found' in self.app.get('/v1/webpage-snaps/' + onet_id).data
+        assert b'URL was not found' in self.app.get('/v1/webpage-snaps/' + google_id).data
 
 
 if __name__ == '__main__':

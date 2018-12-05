@@ -77,7 +77,7 @@ class ImageListAPI(Resource):
 class ImageAPI(Resource):
     def get(self, snap_id, image_id):
         get_image(snap_id, image_id)
-        return send_from_directory(images_dir + snap_id + '/', image_id)
+        return send_from_directory('../' + images_dir + snap_id + '/', image_id)
 
 
 class ImageInfoAPI(Resource):

@@ -2,7 +2,7 @@ version: '3'
 services:
   web:
     build: .
-    command: python -u app.py
+    command: python -u webpage_data_helper/app.py
     ports:
       - '5000:5000'
     volumes:
